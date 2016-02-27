@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity{
         View.OnClickListener mOnClickListener = null;
         int i = 5;
         if(i == 5){
-            Log.e("lx", "kx   ");
+            Log.e("lx", "kx master");
         }
         i += 5;
         ArrayList<String> list = new ArrayList<String>();
