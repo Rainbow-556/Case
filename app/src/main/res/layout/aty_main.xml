@@ -21,5 +21,33 @@
             android:layout_gravity="center_horizontal"
             android:onClick="go"
             android:text="键盘显示隐藏监听"/>
+        <Button
+            android:id="@+id/btn_banner"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="go"
+            android:text="轮播图"/>
+        <Button
+            android:id="@+id/btn_auto_load"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="go"
+            android:text="RecyclerView"/>
+        <Button
+            android:id="@+id/btn_p"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="go"
+            android:text="权限"/>
+        <Button
+            android:id="@+id/btn_status_bar"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="go"
+            android:text="沉浸式状态栏"/>
     </LinearLayout>
 </ScrollView>

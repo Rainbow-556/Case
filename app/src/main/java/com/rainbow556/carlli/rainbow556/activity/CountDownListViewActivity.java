@@ -1,6 +1,5 @@
 package com.rainbow556.carlli.rainbow556.activity;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
@@ -18,7 +17,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class CountDownListViewActivity extends Activity {
+public class CountDownListViewActivity extends BaseActivity {
 	private ListView lvItems;
 	private List<Product> lstProducts;
 

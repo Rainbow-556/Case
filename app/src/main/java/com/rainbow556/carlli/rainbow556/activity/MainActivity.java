@@ -2,12 +2,11 @@ package com.rainbow556.carlli.rainbow556.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.rainbow556.carlli.rainbow556.R;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends BaseActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -22,7 +21,6 @@ public class MainActivity extends AppCompatActivity{
         }
     }
 
-
     private Class getTargetClass(int id){
         Class cls = null;
         switch(id){
@@ -31,6 +29,18 @@ public class MainActivity extends AppCompatActivity{
                 break;
             case R.id.btn_keyboard_event:
                 cls = KeyboardEventActivity.class;
+                break;
+            case R.id.btn_banner:
+                cls = BannerLayoutActivity.class;
+                break;
+            case R.id.btn_auto_load:
+                cls = RecyclerViewActivity.class;
+                break;
+            case R.id.btn_p:
+                cls = PermissionActivity.class;
+                break;
+            case R.id.btn_status_bar:
+                cls = TranslucentBarActivity.class;
                 break;
         }
         return cls;
