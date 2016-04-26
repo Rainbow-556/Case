@@ -102,6 +102,7 @@ public class StatusBarUtils{
      * @param drawerLayout DrawerLayout
      */
     public static void setTranslucentForDrawerLayout(Activity activity, DrawerLayout drawerLayout){
+
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
             // 设置状态栏透明
             Window window = activity.getWindow();
