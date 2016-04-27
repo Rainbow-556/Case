@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerViewActivity extends BaseActivity{
-
     private AutoLoadMoreRecyclerView mRecyclerView;
     private List<String> mData;
 
