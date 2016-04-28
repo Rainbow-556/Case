@@ -42,6 +42,9 @@ public class MainActivity extends BaseActivity{
             case R.id.btn_status_bar:
                 cls = TranslucentBarActivity.class;
                 break;
+            case R.id.btn_ripple:
+                cls = RippleActivity.class;
+                break;
         }
         return cls;
     }
