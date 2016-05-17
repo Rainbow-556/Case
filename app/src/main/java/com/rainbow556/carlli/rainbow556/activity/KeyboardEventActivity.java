@@ -7,6 +7,7 @@ import com.rainbow556.carlli.rainbow556.util.JLog;
 import com.rainbow556.carlli.rainbow556.util.KeyboardVisibilityCatcher;
 
 public class KeyboardEventActivity extends BaseActivity{
+    //556
     private KeyboardVisibilityCatcher catcher;
 
     @Override
