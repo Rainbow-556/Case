@@ -11,6 +11,7 @@ import android.view.ViewTreeObserver;
  * Created by Carl.li on 2016/5/17.
  */
 public class KeyboardVisibilityCatcher{
+    //测试提交
     private Activity activity;
     private View decorView;
     private OnKeyboardVisibilityChangeListener listener;
