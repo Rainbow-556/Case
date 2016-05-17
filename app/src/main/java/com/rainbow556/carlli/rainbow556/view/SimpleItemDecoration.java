@@ -14,6 +14,10 @@ public class SimpleItemDecoration extends RecyclerView.ItemDecoration{
     private Drawable mDivider;
     private boolean hasHeader, hasFooter;
 
+    public SimpleItemDecoration(Context context, int dividerId){
+        this(context, false, false, dividerId);
+    }
+
     public SimpleItemDecoration(Context context, boolean hasHeader, boolean hasFooter, int dividerId){
         mDivider = context.getResources().getDrawable(dividerId);
         this.hasHeader = hasHeader;
@@ -30,7 +34,6 @@ public class SimpleItemDecoration extends RecyclerView.ItemDecoration{
                 mDivider.draw(c);
                 continue;
             }
-
             View child = parent.getChildAt(i);
             RecyclerView.LayoutParams lp = (RecyclerView.LayoutParams) child.getLayoutParams();
             int left = child.getLeft();

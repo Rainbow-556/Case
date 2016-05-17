@@ -1,24 +1,35 @@
 package com.rainbow556.carlli.rainbow556.activity;
 
 import android.os.Bundle;
-import android.util.Log;
 
 import com.rainbow556.carlli.rainbow556.R;
-
-import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent;
-import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEventListener;
+import com.rainbow556.carlli.rainbow556.util.JLog;
+import com.rainbow556.carlli.rainbow556.util.KeyboardVisibilityCatcher;
 
 public class KeyboardEventActivity extends BaseActivity{
+    private KeyboardVisibilityCatcher catcher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_keyboard_event);
-        KeyboardVisibilityEvent.setEventListener(this, new KeyboardVisibilityEventListener(){
+//        KeyboardVisibilityEvent.setEventListener(this, new KeyboardVisibilityEventListener(){
+//            @Override
+//            public void onVisibilityChanged(boolean isOpen){
+//                // some code depending on keyboard visiblity status
+//                Log.e("lx", isOpen + "");
+//            }
+//        });
+        catcher = new KeyboardVisibilityCatcher(this);
+        catcher.listen(new KeyboardVisibilityCatcher.OnKeyboardVisibilityChangeListener(){
             @Override
-            public void onVisibilityChanged(boolean isOpen){
-                // some code depending on keyboard visiblity status
-                Log.e("lx", isOpen + "");
+            public void onKeyboardShown(int keyboardHeight){
+                JLog.e("show: "+keyboardHeight);
+            }
+
+            @Override
+            public void onKeyboardHidden(){
+                JLog.e("hidden");
             }
         });
     }
@@ -27,5 +38,11 @@ public class KeyboardEventActivity extends BaseActivity{
     public void onBackPressed(){
         setResult(222);
         super.onBackPressed();
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        catcher.listen(null);
     }
 }
