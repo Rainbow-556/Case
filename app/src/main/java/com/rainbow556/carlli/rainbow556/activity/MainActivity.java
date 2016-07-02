@@ -45,6 +45,15 @@ public class MainActivity extends BaseActivity{
             case R.id.btn_ripple:
                 cls = RippleActivity.class;
                 break;
+            case R.id.btn_video:
+                cls = VideoWebActivity.class;
+                break;
+            case R.id.btn_practice:
+                cls = CanvasActivity.class;
+                break;
+            case R.id.btn_gesture:
+                cls = GestureLockActivity.class;
+                break;
         }
         return cls;
     }

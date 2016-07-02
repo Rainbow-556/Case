@@ -56,5 +56,26 @@
             android:layout_gravity="center_horizontal"
             android:onClick="go"
             android:text="水波纹效果"/>
+        <Button
+            android:id="@+id/btn_video"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="go"
+            android:text="webview视频全屏播放"/>
+        <Button
+            android:id="@+id/btn_practice"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="go"
+            android:text="Canvas等函数练习"/>
+        <Button
+            android:id="@+id/btn_gesture"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="go"
+            android:text="手势锁"/>
     </LinearLayout>
 </ScrollView>

@@ -1,14 +1,19 @@
 package com.rainbow556.carlli.rainbow556.activity;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import com.rainbow556.carlli.rainbow556.R;
 import com.rainbow556.carlli.rainbow556.util.JLog;
 import com.rainbow556.carlli.rainbow556.util.KeyboardVisibilityCatcher;
 
+import java.io.InputStream;
+
 public class KeyboardEventActivity extends BaseActivity{
     //556
     private KeyboardVisibilityCatcher catcher;
+    private Bitmap mBgBitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -33,12 +38,21 @@ public class KeyboardEventActivity extends BaseActivity{
                 JLog.e("hidden");
             }
         });
+//        initBg();
     }
 
     @Override
     public void onBackPressed(){
         setResult(222);
         super.onBackPressed();
+    }
+
+    private void initBg(){
+        InputStream bgIn = getResources().openRawResource(R.mipmap.bg_main_login);
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        //        options.inPreferredConfig = Bitmap.Config.RGB_565;
+        mBgBitmap = BitmapFactory.decodeStream(bgIn, null, options);
+        JLog.e("size: "+mBgBitmap.getWidth()+", "+mBgBitmap.getHeight());
     }
 
     @Override
