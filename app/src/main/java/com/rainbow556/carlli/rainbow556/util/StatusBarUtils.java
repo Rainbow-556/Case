@@ -22,7 +22,7 @@ import android.widget.LinearLayout;
 public class StatusBarUtils{
 
     /**
-     * 设置状态栏颜色
+     * 设置状态栏颜色，无需重启activity
      * @param activity
      * @param color
      */
@@ -30,30 +30,30 @@ public class StatusBarUtils{
     public static void setColor(Activity activity, int color){
         int sdk = Build.VERSION.SDK_INT;
         Window window = activity.getWindow();
-        ViewGroup rootView = (ViewGroup) ((ViewGroup) activity.findViewById(android.R.id.content)).getChildAt(0);
+        //拿到activity布局文件中的view
+        ViewGroup layoutView = (ViewGroup) ((ViewGroup) activity.findViewById(android.R.id.content)).getChildAt(0);
         if(sdk >= Build.VERSION_CODES.KITKAT && sdk < Build.VERSION_CODES.LOLLIPOP){
             window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
             View statusView = createStatusBarView(activity, color);
             ViewGroup decorView = (ViewGroup) activity.getWindow().getDecorView();
             decorView.addView(statusView);
-            rootView.setFitsSystemWindows(false);
-            rootView.setPadding(0, getStatusBarHeight(activity), 0, 0);
+            layoutView.setFitsSystemWindows(false);
+            layoutView.setPadding(0, getStatusBarHeight(activity), 0, 0);
         }else if(sdk >= Build.VERSION_CODES.LOLLIPOP){
-            rootView.setFitsSystemWindows(true);
+            layoutView.setFitsSystemWindows(true);
             window.setStatusBarColor(color);
         }
     }
 
     /**
      * 使状态栏透明
-     * <p/>
      * 适用于图片作为背景的界面,此时图片会填充到状态栏
      * @param activity 需要设置的activity
      */
     public static void setTransparent(Activity activity){
         int sdk = Build.VERSION.SDK_INT;
-        ViewGroup rootView = (ViewGroup) ((ViewGroup) activity.findViewById(android.R.id.content)).getChildAt(0);
-        rootView.setFitsSystemWindows(true);
+        ViewGroup layoutView = (ViewGroup) ((ViewGroup) activity.findViewById(android.R.id.content)).getChildAt(0);
+        layoutView.setFitsSystemWindows(true);
         if(sdk >= Build.VERSION_CODES.KITKAT && sdk < Build.VERSION_CODES.LOLLIPOP){
             activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
         }else if(sdk >= Build.VERSION_CODES.LOLLIPOP){
@@ -85,10 +85,10 @@ public class StatusBarUtils{
         int sdk = Build.VERSION.SDK_INT;
         if(sdk >= Build.VERSION_CODES.KITKAT){
             drawerLayout.setFitsSystemWindows(false);
-            View statusBarView = createStatusBarView(activity, color);
             ViewGroup content = (ViewGroup) drawerLayout.getChildAt(0);
+            View statusBarView = createStatusBarView(activity, color);
             content.addView(statusBarView, 0);
-            //内容布局不是 LinearLayout 时,设置padding top
+            //内容布局不是LinearLayout时,设置padding top
             if(!(content instanceof LinearLayout) && content.getChildAt(1) != null){
                 content.getChildAt(1).setPadding(0, getStatusBarHeight(activity), 0, 0);
             }

@@ -1,10 +1,11 @@
 package com.rainbow556.carlli.rainbow556.activity;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
+import android.widget.LinearLayout;
 
 import com.rainbow556.carlli.rainbow556.R;
+import com.rainbow556.carlli.rainbow556.util.RippleDrawableUtils;
 
 public class RippleActivity extends BaseActivity{
 
@@ -12,11 +13,8 @@ public class RippleActivity extends BaseActivity{
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ripple);
-        findView(R.id.tv).setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Toast.makeText(RippleActivity.this, "click", Toast.LENGTH_SHORT).show();
-            }
-        });
+        LinearLayout linearLayout = findView(R.id.ll);
+        Drawable rippleD = RippleDrawableUtils.getSelectableDrawable(0xffffffff);
+        linearLayout.setBackgroundDrawable(rippleD);
     }
 }

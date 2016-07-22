@@ -11,6 +11,8 @@ import android.view.View;
 
 import com.rainbow556.carlli.rainbow556.util.JLog;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by Carl.li on 2016/6/30.
  */
@@ -25,6 +27,7 @@ public class NumberProgressBar extends View{
     private Rect mViewBounds;
     private float mProgress;
     private float mMaxProgress = 100f;
+    private DecimalFormat format  =   new  DecimalFormat("##0.00");
 
     public NumberProgressBar(Context context){
         super(context);
@@ -94,7 +97,7 @@ public class NumberProgressBar extends View{
         int y = mHeight / 2;
 
         float reachDx = mWidth/mMaxProgress*mProgress;
-        String progressStr = mProgress+"%";
+        String progressStr = format.format(mProgress)+"%";
         float textWidth = mPaint.measureText(progressStr, 0, progressStr.length());
         float unreachStartX;
         if(textWidth + reachDx + mTextOffset >= mWidth){
@@ -115,6 +118,12 @@ public class NumberProgressBar extends View{
         canvas.drawLine(unreachStartX, y, mWidth, y, mPaint);
     }
 
+    /**
+     *
+     * @param bounds
+     * @param paint
+     * @return
+     */
     private static int getVerticalTextBaseline(Rect bounds, Paint paint){
         Paint.FontMetricsInt fontMetrics = paint.getFontMetricsInt();
         return (bounds.bottom + bounds.top -fontMetrics.bottom - fontMetrics.top) / 2;
@@ -126,12 +135,12 @@ public class NumberProgressBar extends View{
     }
 
     public void start(){
-        ValueAnimator animator = ValueAnimator.ofInt(0, 100);
-        animator.setDuration(10000);
+        ValueAnimator animator = ValueAnimator.ofFloat(0, 100);
+        animator.setDuration(8000);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(){
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator){
-                int value = (int) valueAnimator.getAnimatedValue();
+                float value = (float) valueAnimator.getAnimatedValue();
                 setProgress(value);
             }
         });

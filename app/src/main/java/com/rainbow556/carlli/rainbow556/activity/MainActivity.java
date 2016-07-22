@@ -17,7 +17,8 @@ public class MainActivity extends BaseActivity{
     public void go(View view){
         Class cls = getTargetClass(view.getId());
         if(cls != null){
-            startActivity(new Intent(this, cls));
+            Intent intent = new Intent(this, cls);
+            startActivity(intent);
         }
     }
 

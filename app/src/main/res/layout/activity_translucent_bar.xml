@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.rainbow556.carlli.rainbow556.activity.TranslucentBarActivity"
+    android:background="#0ff"
     >
     <!--
     <android.support.v7.widget.Toolbar
@@ -29,5 +30,13 @@
         android:layout_height="match_parent"
         android:layout_below="@id/title_bar"
         android:background="#ffddcc"
-        ></RelativeLayout>
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="change"
+            android:onClick="changeColor"
+            />
+    </RelativeLayout>
 </RelativeLayout>

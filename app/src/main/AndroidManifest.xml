@@ -35,6 +35,7 @@
         </activity>
         <activity
             android:name=".activity.VideoWebActivity"
+            android:hardwareAccelerated="true"
             android:configChanges="keyboardHidden|orientation|screenSize">
         </activity>
         <activity android:name=".activity.CanvasActivity">
