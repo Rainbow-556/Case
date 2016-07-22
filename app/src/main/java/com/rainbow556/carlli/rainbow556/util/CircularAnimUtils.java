@@ -20,7 +20,7 @@ import java.lang.reflect.Method;
 /**
  * 对ViewAnimationUtils.createCircularReveal()方法的封装.
  */
-public class CircularAnimUtil{
+public class CircularAnimUtils{
 
     private static final long PERFECT_MILLS = 500;
 
