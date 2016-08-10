@@ -35,12 +35,16 @@
         </activity>
         <activity
             android:name=".activity.VideoWebActivity"
-            android:hardwareAccelerated="true"
-            android:configChanges="keyboardHidden|orientation|screenSize">
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:hardwareAccelerated="true">
         </activity>
         <activity android:name=".activity.CanvasActivity">
         </activity>
         <activity android:name=".activity.GestureLockActivity">
+        </activity>
+        <activity android:name=".activity.FragmentLifecycleActivity">
+        </activity>
+        <activity android:name=".activity.Animation3DActivity">
         </activity>
     </application>
 </manifest>

@@ -77,5 +77,19 @@
             android:layout_gravity="center_horizontal"
             android:onClick="go"
             android:text="手势锁"/>
+        <Button
+            android:id="@+id/btn_life"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="go"
+            android:text="fragment生命周期"/>
+        <Button
+            android:id="@+id/btn_3d"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="go"
+            android:text="3D动画"/>
     </LinearLayout>
 </ScrollView>

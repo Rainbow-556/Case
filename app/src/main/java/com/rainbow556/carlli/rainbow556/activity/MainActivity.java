@@ -55,6 +55,12 @@ public class MainActivity extends BaseActivity{
             case R.id.btn_gesture:
                 cls = GestureLockActivity.class;
                 break;
+            case R.id.btn_life:
+                cls = FragmentLifecycleActivity.class;
+                break;
+            case R.id.btn_3d:
+                cls = Animation3DActivity.class;
+                break;
         }
         return cls;
     }
