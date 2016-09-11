@@ -61,6 +61,9 @@ public class MainActivity extends BaseActivity{
             case R.id.btn_3d:
                 cls = Animation3DActivity.class;
                 break;
+            case R.id.btn_drag:
+                cls = ViewDragHelperActivity.class;
+                break;
         }
         return cls;
     }

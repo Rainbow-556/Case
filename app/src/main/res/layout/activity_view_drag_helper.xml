@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rainbow556.carlli.rainbow556.activity.ViewDragHelperActivity">
+    <com.rainbow556.carlli.rainbow556.view.ViewDragHelperPracticeView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="child_0"
+            android:background="#af00"
+            />
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:text="child_1"
+            android:background="#a00f"
+            />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:text="child_2"
+            android:background="#a0f0"
+            />
+    </com.rainbow556.carlli.rainbow556.view.ViewDragHelperPracticeView>
+</RelativeLayout>

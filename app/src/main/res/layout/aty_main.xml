@@ -91,5 +91,12 @@
             android:layout_gravity="center_horizontal"
             android:onClick="go"
             android:text="3D动画"/>
+        <Button
+            android:id="@+id/btn_drag"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="go"
+            android:text="View Drag Helper"/>
     </LinearLayout>
 </ScrollView>
