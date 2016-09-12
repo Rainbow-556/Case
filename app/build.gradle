@@ -27,3 +27,11 @@ dependencies {
     compile 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:1.0.0'
     compile 'com.android.support:recyclerview-v7:23.2.1'
 }
+
+//去除lint相关task，加快构建速度
+tasks.whenTaskAdded {
+    task ->
+    if (task.name.equals("lint")) {
+        task.enabled = false
+    }
+}
