@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion '24.0.2'
 
     defaultConfig {
         applicationId "com.rainbow556.carlli.rainbow556"
@@ -31,5 +31,13 @@ dependencies {
 tasks.whenTaskAdded { task ->
     if (task.name.equals("lint")) {
         task.enabled = false
+    }
+}
+
+//自定义task
+task myTask{
+    def text = 'hello, rainbow556!'
+    doLast{
+        println(text)
     }
 }
