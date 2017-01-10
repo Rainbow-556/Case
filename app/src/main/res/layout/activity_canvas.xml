@@ -9,5 +9,20 @@
     <com.rainbow556.carlli.rainbow556.view.PracticeView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:visibility="gone"
+        />
+    <com.rainbow556.carlli.rainbow556.view.BrokenLineView
+        android:id="@+id/v_line"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:layout_centerInParent="true"
+        android:background="#efa"
+        android:visibility="gone"/>
+    <com.rainbow556.carlli.rainbow556.view.RingView
+        android:id="@+id/v_ring"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_centerInParent="true"
+        android:background="#efa"
         />
 </RelativeLayout>
